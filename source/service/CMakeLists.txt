@@ -1,0 +1,19 @@
+# CMakeLists.txt
+
+FILE(GLOB SOURCES *.cc)
+MESSAGE("SOURCES: ${SOURCES}")
+ADD_EXECUTABLE(service)
+TARGET_SOURCES(service
+PRIVATE
+  ${SOURCES}
+)
+TARGET_LINK_LIBRARIES(service
+PRIVATE
+  pthread
+  gtest
+  gmock
+)
+TARGET_INCLUDE_DIRECTORIES(service
+PUBLIC
+  ../../include
+)

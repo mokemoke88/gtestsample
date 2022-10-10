@@ -1,0 +1,8 @@
+build/
+.vscode/
+*~
+# for gcov
+*.gcda
+*.gcno
+*.gcov
+coverage-report

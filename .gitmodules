@@ -1,0 +1,2 @@
+[submodule "third-party/googletest"]
+	path = third-party/googletest
