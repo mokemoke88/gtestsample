@@ -1,3 +1,25 @@
+# Google Test Sample
+
+## これはなに?
+
+Google Test | Mock を使用する際のソースツリーサンプル
+
+## ツリー構成
+
+```
++- .devcontainer : vscode Dev Container 拡張向けの設定周り
++- include       : ヘッダディレクトリ
+ +- service
++- source        : ソースコードディレクトリ
+ +- service      : テスト対象ソースコード
++- test          : テストコードディレクトリ
+ +- main.cc      : テストエントリポイント
+ +- test-case001.cc : テストケースコード
++- third-party 
+ +- googletest   : Google Test レポジトリクローン 
+```
+
+
 ## 備忘録
 
 ### Dockerfile
@@ -20,10 +42,22 @@ ENV TZ=Asia/Tokyo
 
 ### git
 
+クローン後
+
+```sh
+git submodule update --init --recursive
+```
+
+もしくはクローン時に
+
+```
+git clone --recursive xxxx
+```
+
 コンテナを再生成した場合にコンテナ内でgitを使用するためには, 以下の実行が必要
 
 ```sh
-git config --global --add safe.directory /workspaces/base
+git config --global --add safe.directory /workspaces/gtestsample
 ```
 
 third-party 以下に googletest を submodule として取り込み
